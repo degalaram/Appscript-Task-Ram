@@ -1,0 +1,210 @@
+# Appscrip Assignment Reference Document
+
+---
+
+## 1. Objective
+
+The goal of this project is to create a fully functional Product Listing Page (PLP) that matches the design specified in the Figma file (accessible at https://www.figma.com/file/N0Tv7yYLf3kfMLQjUncUlx/Design-Task---PLP?type=design&node-id=0-1&mode=design&t=mEpvVYQ7GInQPxXk-0). 
+
+This page simulates an e-commerce listing interface, typically including sections like a header with navigation, filters for refining products, a grid of product cards, and a footer.
+
+The purpose is to demonstrate skills in front-end development, including:
+
+- Translating a UI design into code using HTML, CSS, and React.js.
+- Ensuring responsiveness across devices (desktop, tablet, mobile).
+- Optimizing for SEO (e.g., semantic tags, meta descriptions, alt text).
+- Integrating optional dynamic data from a mock API (e.g., Fake Store API).
+- Deploying the page to a public host and version-controlling the code on GitHub.
+
+By the end, you'll have a live, shareable page that evaluators can review for code structure, naming conventions, minimal dependencies, screen adaptability, and minimal DOM size. This project emphasizes clean, efficient code without over-relying on external libraries.
+
+## 2. Technical Requirements
+
+- **Software and Tools**:
+    - **Code Editor**: Visual Studio Code (VS Code) – free, with extensions like Prettier for formatting and ESLint for code linting.
+    - **Version Control**: Git – install from https://git-scm.com/. You'll need a free GitHub account.
+    - **Node.js and npm**: Version 14+ (includes npm for package management). Download from https://nodejs.org/. Node.js is optional if not using a server, but required for React setup.
+    - **Browser**: Google Chrome or Firefox for testing, with developer tools enabled.
+    - **Deployment Platform**: Netlify account (free tier) – sign up at https://www.netlify.com/.
+    - **Optional Mock API**: Use https://fakestoreapi.com/ for sample product data (no setup needed; it's a public API).
+- **Libraries/Packages**:
+    - React.js (via Create React App) – minimal setup.
+    - No heavy frameworks like Bootstrap; use pure CSS for styling to minimize dependencies.
+    - Optional: Axios for API calls (if using mock data) – install via npm if needed.
+- **Skills Assumed**:
+    - Basic knowledge of HTML/CSS/JavaScript.
+
+Ensure your system is updated, and test installations by running commands like `node -v` and `git --version` in your terminal.
+
+## 3. Step-by-Step Instructions
+
+Follow these steps in order. Each step includes why it's important, what to do, and tips for beginners. Take your time—test frequently by running the app locally.
+
+### Step 1: Review the Figma Design
+
+- **Why?** Understand the layout, colors, fonts, and components to accurately replicate the page.
+- **How to Do It**:
+    1. Open the Figma link in your browser.
+    2. Inspect layers: Click on elements to see properties like sizes, colors (e.g., hex codes), fonts (e.g., Roboto), and spacing.
+    3. Note responsive views: Check artboards for desktop, tablet (e.g., 768px width), and mobile (e.g., 375px width).
+    4. Sketch a wireframe on paper: Identify sections like header (logo, nav, search), sidebar filters (categories, price sliders), product grid (cards with images, titles, prices), pagination, and footer.
+- **Tips**: Export assets (e.g., icons, images) from Figma as PNG/SVG. Use tools like Figma's inspect panel for CSS values.
+
+### Step 2: Set Up Your Development Environment
+
+- **Why?** A proper setup ensures smooth coding and version control.
+- **How to Do It**:
+    1. Install Node.js and Git if not already done.
+    2. Create a GitHub repository: Name it "Appscrip-task-[Your Name]" (e.g., Appscrip-task-John-Doe). Make it public.
+    3. Clone the repo locally: Open terminal, run `git clone <https://github.com/yourusername/Appscrip-task-yourname.git`>.
+    4. Navigate to the folder: `cd Appscrip-task-yourname`.
+    5. Initialize a React app: Run `npx create-react-app .` (the dot uses the current folder).
+- **Tips**: If you encounter errors, check Node.js installation. Commit early with messages like "Initial setup".
+
+### Step 3: Implement Static HTML and CSS
+
+- **Why?** Start with basics before adding React for easier debugging.
+- **How to Do It**:
+    1. In the `public` folder, update `index.html`: Add `<title>Product Listing Page</title>` and meta tags like `<meta name="description" content="Browse our collection of products with filters and search.">`.
+    2. In `src`, create a CSS file (e.g., `App.css`): Define global styles like fonts, colors from Figma.
+    3. Build layout: Use semantic HTML tags (e.g., `<header>`, `<main>`, `<footer>`, `<h1>Products</h1>`, `<h2>Filters</h2>`).
+    4. Add responsiveness: Use media queries in CSS (e.g., `@media (max-width: 768px) { ... }` to stack elements).
+    5. Optimize images: Name them SEO-friendly (e.g., "product-shirt-blue.jpg"), add `alt="Blue shirt product image"`.
+- **Tips**: Test in browser dev tools (resize window). Keep DOM minimal by avoiding unnecessary nested divs.
+
+### Step 4: Convert to React Components
+
+- **Why?** React makes the page dynamic and reusable.
+- **How to Do It**:
+    1. Break into components: Create files like `Header.js`, `Filters.js`, `ProductCard.js`, `ProductGrid.js`.
+    2. Use state for interactivity: In `App.js`, import components and manage data (e.g., products array).
+    3. Add optional API integration: Fetch data from Fake Store API in `useEffect`.
+    4. Implement SEO in React: Use `react-helmet` (install if needed) for dynamic titles/descriptions. Add [schema.org](http://schema.org/) JSON-LD for products.
+    5. Minimize packages: Avoid extras; use built-in React features.
+- **Tips**: Run `npm start` to preview. Debug with console logs.
+
+### Step 5: Add Responsiveness and Testing
+
+- **Why?** Ensure the page works on all devices.
+- **How to Do It**:
+    1. Use CSS Flexbox/Grid for layout (e.g., grid for products).
+    2. Test breakpoints: Mobile (stack vertically), Tablet (2-column grid), Desktop (3+ columns).
+    3. Check SEO: Validate with tools like Google's Structured Data Testing Tool.
+    4. Optimize DOM: Use React's virtual DOM; avoid deep nesting.
+- **Tips**: Use Chrome's mobile emulation. Fix issues like overflowing text.
+
+### Step 6: Deploy and Share
+
+- **Why?** Make it accessible for evaluation.
+- **How to Do It**:
+    1. Build the app: Run `npm run build`.
+    2. Deploy to Netlify: Drag the `build` folder to [app.netlify.com](http://app.netlify.com/) or link GitHub repo for auto-deploys.
+    3. Push to GitHub: `git add .`, `git commit -m "Final deployment"`, `git push`.
+    4. Share links: Provide GitHub repo and Netlify URL.
+- **Tips**: If using API, ensure CORS allows it. Test live site.
+
+## 4. Project Structure
+
+Organize your project for clarity and maintainability. A typical React structure looks like this:
+
+- **Root Folder (Appscrip-task-yourname)**:
+    - `public/` : Static files like `index.html`, images (e.g., `assets/product-image.jpg`).
+    - `src/` : Source code.
+        - `components/` : Reusable parts.
+            - `Header.js` : Navigation and search.
+            - `Filters.js` : Sidebar with checkboxes/sliders.
+            - `ProductCard.js` : Individual product display.
+            - `Footer.js` : Bottom links.
+        - `App.js` : Main component assembling everything.
+        - `App.css` : Global styles.
+        - `index.js` : Entry point.
+    - `package.json` : Dependencies (e.g., React).
+    - `.gitignore` : Ignore node_modules.
+    - `README.md` : Describe project, setup instructions.
+
+This structure promotes modularity—e.g., components folder keeps UI pieces separate.
+
+## 5. Example Codes
+
+Here are snippets to illustrate key concepts. Adapt them to your needs; don't copy full code.
+
+- **HTML Structure (in index.html for SEO)**:
+    
+    ```html
+    <head>
+      <title>Product Listing Page</title>
+      <meta name="description" content="Explore products with advanced filters and search functionality.">
+      <script type="application/ld+json">
+      {
+        "@context": "<https://schema.org>",
+        "@type": "ItemList",
+        "itemListElement": [...]  // Array of products
+      }
+      </script>
+    </head>
+    ```
+    
+- **CSS for Responsiveness (in App.css)**:
+    
+    ```css
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);  /* Desktop: 3 columns */
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);  /* Tablet: 2 columns */
+      }
+    }
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;  /* Mobile: 1 column */
+      }
+    }
+    ```
+    
+- **React Component (ProductCard.js)**:
+    
+    ```jsx
+    import React from 'react';
+    
+    const ProductCard = ({ product }) => {
+      return (
+        <div className="product-card">
+          <img src={product.image} alt={`Image of ${product.title}`} />
+          <h2>{product.title}</h2>
+          <p>${product.price}</p>
+          <button>Add to Cart</button>
+        </div>
+      );
+    };
+    
+    export default ProductCard;
+    ```
+    
+- **API Fetch in React (in App.js)**:
+    
+    ```jsx
+    import React, { useState, useEffect } from 'react';
+    import axios from 'axios';
+    
+    const App = () => {
+      const [products, setProducts] = useState([]);
+    
+      useEffect(() => {
+        axios.get('<https://fakestoreapi.com/products>')
+          .then(response => setProducts(response.data))
+          .catch(error => console.error('API error:', error));
+      }, []);
+    
+      return (
+        <div>
+          {/* Render products */}
+        </div>
+      );
+    };
+    ```
+    
+
+These examples show modularity and best practices. Build upon them while keeping code clean and minimal.

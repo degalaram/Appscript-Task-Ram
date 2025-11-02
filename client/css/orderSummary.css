@@ -1,0 +1,91 @@
+
+.order-summary-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.order-summary-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.order-summary-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.summary-details {
+  margin-bottom: 30px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.summary-row.savings {
+  color: #27ae60;
+}
+
+.summary-row.total {
+  border-top: 2px solid #333;
+  border-bottom: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.order-question {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.order-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.place-order-btn,
+.cancel-btn {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.place-order-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.place-order-btn:hover {
+  background-color: #229954;
+}
+
+.cancel-btn:hover {
+  background-color: #c0392b;
+}

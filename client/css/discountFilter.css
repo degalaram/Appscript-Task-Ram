@@ -1,0 +1,15 @@
+
+.discount-filter {
+  padding: 15px 0;
+}
+
+.discount-filter h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.discount-filter label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
