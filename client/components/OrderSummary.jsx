@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import '../css/orderSummary.css';
-import OrderSuccess from './OrderSuccess';
+import OrderSuccess from './OrderSuccess.jsx';
 
 const OrderSummary = ({ cartItems, total, billingInfo, onClose }) => {
   const [showSuccess, setShowSuccess] = useState(false);
